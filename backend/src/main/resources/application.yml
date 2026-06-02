@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: architect-ledger
+
+  datasource:
+    url: ${DB_URL:jdbc:h2:mem:architectledger;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL}
+    username: ${DB_USER:${DB_USERNAME:sa}}
+    password: ${DB_PASS:${DB_PASSWORD:}}
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: ${DB_DDL_AUTO:update}
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: UTC
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:NGI3ZTJhOWYzYzhkMWU2YjVhMGY5YzJkN2U0YjFhOGYzYzZlOWQyYjVhN2YwYzNlNmQ5YjJhNWY4YzFlNGQ3}
+    expiration-ms: 86400000
+
+  cors:
+    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
+
+logging:
+  level:
+    com.architectledger: INFO
+    org.springframework.security: WARN
