@@ -35,7 +35,7 @@ app:
     expiration-ms: 86400000
 
   cors:
-    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
+    allowed-origins: ${ALLOWED_ORIGINS:https://expense-tracker-jade-sigma-55.vercel.app/,http://localhost:3000}
 
 logging:
   level:
