@@ -6,7 +6,7 @@ spring:
     name: architect-ledger
 
   datasource:
-    url: ${DB_URL:jdbc:h2:mem:architectledger;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL}
+    url: ${DATABASE_URL}
     username: ${DB_USER:${DB_USERNAME:sa}}
     password: ${DB_PASS:${DB_PASSWORD:}}
 
