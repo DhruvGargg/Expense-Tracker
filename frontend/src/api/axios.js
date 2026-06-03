@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const api = axios.create({
   // Priority: 1. Render Env Var, 2. Local Proxy (/api)
-  baseURL: 'https://expense-tracker-4ngx.onrender.com' || '/api',
+  baseURL: 'https://expense-tracker-webapp-w1eq.onrender.com' || '/api',
   headers: { 'Content-Type': 'application/json' },
 })
 
