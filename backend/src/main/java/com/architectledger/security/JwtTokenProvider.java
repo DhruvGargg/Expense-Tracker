@@ -23,7 +23,25 @@ public class JwtTokenProvider {
     private long jwtExpirationMs;
 
     private SecretKey key() {
-        return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
+        byte[] keyBytes;
+        try {
+            keyBytes = Decoders.BASE64.decode(jwtSecret);
+            if (keyBytes.length < 32) {
+                keyBytes = sha256(jwtSecret);
+            }
+        } catch (IllegalArgumentException e) {
+            keyBytes = sha256(jwtSecret);
+        }
+        return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    private byte[] sha256(String input) {
+        try {
+            java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA-256");
+            return digest.digest(input.getBytes(java.nio.charset.StandardCharsets.UTF_8));
+        } catch (java.security.NoSuchAlgorithmException e) {
+            throw new RuntimeException("SHA-256 algorithm not found", e);
+        }
     }
 
     public String generateToken(Authentication authentication) {
