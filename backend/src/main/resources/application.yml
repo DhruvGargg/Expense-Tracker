@@ -31,10 +31,10 @@ spring:
 
 app:
   jwt:
-    secret: ${JWT_SECRET:NGI3ZTJhOWYzYzhkMWU2YjVhMGY5YzJkN2U0YjFhOGYzYzZlOWQyYjVhN2YwYzNlNmQ5YjJhNWY4YzFlNGQ3}
+    secret: ${JWT_SECRET}
     expiration-ms: 86400000
   cors:
-    allowed-origins: ${ALLOWED_ORIGINS:https://expense-tracker-jade-sigma-55.vercel.app,http://localhost:5173,http://localhost:3000}
+    allowed-origins: ${ALLOWED_ORIGINS}
 
 logging:
   level:
