@@ -8,7 +8,6 @@
 A secure, high-performance, full-stack financial dashboard designed to track, manage, and visualize corporate income, expenses, and transaction logs. This application features a decoupled architecture with a **Spring Boot 3 REST API** backend and a **Vite + React** single-page application frontend.
 
 ---
-
 ## ✨ Features
 
 - 🔐 **Stateless Authentication**: Secure user registration and login endpoints utilizing JSON Web Tokens (JWT).
