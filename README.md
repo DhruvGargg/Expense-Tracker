@@ -31,7 +31,6 @@ graph TD
     A[Presentation Layer: Vite + React] <-->|Secure HTTPS / REST + JWT| B[Application Layer: Spring Boot API]
     B <-->|Spring Data JPA| C[Data Layer: H2 / PostgreSQL]
 ```
-
 - **Frontend**: Single-Page Application (SPA) utilizing Axios Interceptors to attach `Authorization: Bearer <token>` headers to API requests. Managed via React Router DOM.
 - **Backend**: Structured Controller-Service-Repository pattern. Features `@Transactional` data protections and global security filters.
 - **Database**: Supports seamless database transitions (H2 for in-memory development, PostgreSQL/MySQL for production deployments).
